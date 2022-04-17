@@ -1,0 +1,59 @@
+<canvas width="600" height="400"></canvas>
+<!-- #duplicando codigo 
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "green";
+    pincel.strokeStyle = "black";
+    pincel.fillRect(0,0,50,50);
+    pincel.strokeRect(0,0,50,50);
+
+    pincel.fillRect(50,0,50,50);
+    pincel.strokeRect(50,0,50,50);
+
+    pincel.fillRect(100,0,50,50);
+    pincel.strokeRect(100,0,50,50);
+
+    pincel.fillRect(150,0,50,50);
+    pincel.strokeRect(150,0,50,50);
+
+    pincel.fillRect(200,0,50,50);
+    pincel.strokeRect(200,0,50,50);
+
+</script>
+-->
+
+<!-- #Mediante Funcion -->
+<script>
+    function dibujarCuadrado(x,y,color){
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        
+        pincel.fillStyle = color;
+        pincel.strokeStyle = "black";
+        pincel.fillRect(x,y,50,50);
+        pincel.strokeRect(x,y,50,50);
+    }
+    /*    	
+    dibujarCuadrado(0,0,"red");
+    dibujarCuadrado(0,50,"yellow");
+    dibujarCuadrado(0,100, "green");
+    */
+   /* con bucle While
+        var x = 0;
+        while(x < 600){
+            dibujarCuadrado(x,0,"#3498db");
+            dibujarCuadrado(x,50,"white");
+            dibujarCuadrado(x,100,"#3498db");
+            x +=50;
+        }*/
+    
+    /* con bucle FOR*/ 
+        for (let x = 0; x < 600; x+=50) {
+            dibujarCuadrado(x,0,"#3498db");
+            dibujarCuadrado(x,50,"white");
+            dibujarCuadrado(x,100,"#3498db");
+        }
+
+</script>
