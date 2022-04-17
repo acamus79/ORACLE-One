@@ -7,8 +7,10 @@
     pincel.fillRect(0,0,600,400);
     
     function exibirAlerta(evento){
+        var x = evento.pageX;
+        var y = evento.pageY;
             console.log(evento);
-            alert("usted hizo un click")
+            alert("usted hizo un click en las coordenadas "+x+" - "+y)
     }
 
     pantalla.onclick = exibirAlerta;
