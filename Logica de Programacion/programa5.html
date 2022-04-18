@@ -1,0 +1,58 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var radio = 10;
+    var xAleatorio;
+    var yAleatorio;
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    function dibujaCirculo(x,y,radio, color){
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI)
+        pincel.fill();
+    }
+
+    function limpiaPantalla(){
+        pincel.clearRect(0,0,600,400);
+    }
+
+    function creaBlanco(x,y){
+        dibujaCirculo(x,y,radio+20,"red")
+        dibujaCirculo(x,y,radio+10,"white")
+        dibujaCirculo(x,y,radio,"red")
+    }
+
+    function sortearPosicion(maximo){
+         return Math.floor(Math.random()*maximo);
+    }
+
+    function actualizaPantalla(){
+        limpiaPantalla();
+        xAleatorio = sortearPosicion(600);
+        yAleatorio = sortearPosicion(400);
+        creaBlanco(xAleatorio,yAleatorio);
+    }
+
+    setInterval(actualizaPantalla,1000);
+
+    function disparo(evento){
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if ((x < xAleatorio + radio) &&
+            (x > xAleatorio - radio) &&
+            (y < yAleatorio + radio) &&
+            (x > yAleatorio - radio)) {
+            alert("Diste en el blanco!!")
+        }
+    }
+    
+    pantalla.onclick = disparo;
+    
+</script>
