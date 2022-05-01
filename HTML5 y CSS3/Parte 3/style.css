@@ -82,47 +82,34 @@ nav a:hover{
     font-weight: bold;
     margin-top:10px;
 }
-
 footer{
     text-align: center;
     background: url(imagenes/bg.jpg);
     padding:40px;
 }
-
 .copyright{
     color:#FFFFFF;
     font-size: 13px;
     margin:20px;
 }
-
-main{
-    width: 940px;
-    margin: 0 auto;
-    
-}
-
 form{
     margin: 40px 0px;
     align-items: center;
 }
-
 form label, form legend{
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
 }
-
 .input-padron{
     display: block;
     margin: 0 0 20px;
     padding: 10px 25px;
     width: 50%;
 }
-
 .checkbox{
     margin: 20x 0;
 }
-
 .enviar {
     width: 40%;
     padding: 15px 0;
@@ -135,42 +122,40 @@ form label, form legend{
     transition: 1s all;
     cursor: pointer;
 }
-
 .enviar:hover{
     background: darkorange;
     transform: scale(1.20);
 }
-
 table{
     margin: 40px 40px;
 }
-
 thead{
     background: #555555;
     color: white;
     font-weight: bold;
 }
-
 td, th {
     border: 1px solid #000000;
 }
 
 /*css para pagina index.html*/
+
 .banner{
 width: 100%;
 }
-
+.principal{
+    background: #FEFEFE;
+    padding: 3em;
+}
 .titulo-principal{
     text-align: center;
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
 }
-
 .principal p{
     margin: 0 0 1em;
 }
-
 .principal strong{
     font-weight: bold;
 }
@@ -184,17 +169,64 @@ width: 100%;
 }
 .mapa{
     padding: 3em 0;
+    background: linear-gradient(#FEFEFE,#888888);
 }
 .mapa p{
     margin: 0 0 2em;
     text-align: center;
 }
-
-.imagenDiferenciales{
-    width: 60%;
+.mapa-contenido{
+    width: 940px;
+    margin: 0 auto;
+}
+.diferenciales{
+    padding: 3em;
+    background: #888888;
+}
+.contenido-diferenciales{
+    width: 640px;
+    margin: 0 auto;
+}
+.lista-diferenciales{
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+}
+.items{
+    line-height: 1.5;
+}
+.items:first-child{
+    font-weight: bold;
+}
+.items::before{
+    content: "★ ";
+}
+.imagen-diferenciales{
+    width: 55%;
+    transition: 400ms;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px #000000;
+}
+.imagen-diferenciales:hover{
+    opacity: 0.3;
 }
 .video{
     width: 560px;
     margin: 1em auto;
+}
+
+@media  screen and (max-width:480px){
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .caja,.principal, .mapa-contenido, .diferenciales, .video, .contenido-diferenciales{
+        width: auto;
+    }
+    .lista-diferenciales, .imagen-diferenciales{
+        width: 100%;
+    }
 }
 
